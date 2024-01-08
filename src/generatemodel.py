@@ -13,7 +13,7 @@ for name in os.listdir(path):
     label_map[label] = name
     for frame in os.listdir(f"{path}/{name}"):
         labels.append(label)
-        faces.append(cv2.imread(f"{path}/{name}/{frame}"))
+        faces.append(cv2.imread(f"{path}/{name}/{frame}", 0))
     label+=1
 
 path = os.getcwd()
@@ -34,7 +34,7 @@ model.write("model.xml")
 #Data
 data = pd.DataFrame(label_map, index = [0])
 if os.path.exists(f"{path}/index.csv"):
-    if not os.path.exists(f"{path}/index"):
+    if not os.path.exists(f"{path}/old_index"):
         os.makedirs("old_index")
     os.rename(f"{path}/index.csv", f"{path}/old_index/index{len(os.listdir(path + '/' + 'old_models'))}.csv")
 

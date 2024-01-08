@@ -23,13 +23,15 @@ def menu():
     
     match option:
         case "1":
-            pass
+            use()
         case "2":
             add_faces()
         case "3":
             remove_faces()
         case "4":
             read_faces()
+        case "5":
+            generate()
         case _:
             sys.exit()
 
@@ -39,7 +41,9 @@ def menu():
 def main():
     print("Facial Recognition App V 0.1")
     make_defaults()
-    menu()
+    while True:
+        clear()
+        menu()
 
     return 0
 

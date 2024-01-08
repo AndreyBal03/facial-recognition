@@ -1,10 +1,16 @@
 import os
+import time
 import shutil
 """This is suppose to be the 'preload file,
 and do stuff likem check if the data dir exists,
 add the needed functions to the program, etc.'"""
 
 PATH = os.getcwd()
+def clear():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 def make_defaults():
     #By first instance this is the only needed to start
@@ -24,7 +30,8 @@ def read_faces():
     print("Faces: ")
     for i in faces:
         print(i)
-
+    
+    time.sleep(2)
     return len(faces)
 
 def add_faces():
@@ -60,6 +67,30 @@ def remove_faces():
 
     return 0
 
+def generate():
+    if not len(os.listdir(f"{PATH}/data")) != 0:
+        print("There is not enough faces to create a model :(")
+        time.sleep(3)
+        return -1
 
+    os.system("python generatemodel.py")
+
+    return 0
+
+def use():
+
+    #Check needed files
+    if not os.path.exists(f"{PATH}/model.xml"):
+        print("The model hasn't been created, please use the other functions to create one")
+        time.sleep(3)
+        return -1
+    if not os.path.exists(f"{PATH}/index.csv"):
+        print("Label map is missing :(, generate again the model")
+        time.sleep(3)
+        return -1
+
+    os.system("python usemodel.py")
+
+    return 0
 
 
