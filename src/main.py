@@ -12,7 +12,7 @@ def menu():
     print("""
           1. Check Face
           2. Add Face
-          3. Delete Face
+          3. Remove Face
           4. Read Actual Faces
           5. Exit
           Default: 'Exit'
@@ -26,7 +26,7 @@ def menu():
         case "2":
             add_faces()
         case "3":
-            pass
+            remove_faces()
         case "4":
             read_faces()
         case _:
