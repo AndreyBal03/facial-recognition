@@ -14,7 +14,8 @@ def menu():
           2. Add Face
           3. Remove Face
           4. Read Actual Faces
-          5. Exit
+          5. Generate Model
+          6. Exit
           Default: 'Exit'
           """)
 

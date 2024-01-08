@@ -35,7 +35,7 @@ while True:
     for (x, y , width, height) in faces:
         face = auxframe[y:y+height, x:x+width]
         cv2.rectangle(frame, (x,y), (x+width, y+height), (0,255,0), 3)
-        cv2.imwrite(f"{path}/face_{num_of_faces}.jpg", face)
+        cv2.imwrite(f"{path}/face_{num_of_faces}.jpg", cv2.resize(face, (150, 150),cv2.INTER_AREA ))
     cv2.imshow(label,frame)
 
     if cv2.waitKey(1) == ord("q"): #Press q to exit
