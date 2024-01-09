@@ -36,7 +36,10 @@ def read_faces():
 
 def add_faces():
     print("Label of the new face")
-    label = input("->: ")
+    print("write -1 if you want to exit")
+    label = input("-> ")
+    if label == "-1":
+        return 0
     os.system(f"python addfaces.py {label}")
 
     return 0
@@ -74,6 +77,7 @@ def generate():
         return -1
 
     os.system("python generatemodel.py")
+    time.sleep(1)
 
     return 0
 

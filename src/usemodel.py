@@ -13,6 +13,7 @@ faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalfa
 labels = pd.read_csv("index.csv")
 
 
+print("Press 'q' to exit ")
 while True:
     ret, frame = video.read()
     auxframe = frame.copy()

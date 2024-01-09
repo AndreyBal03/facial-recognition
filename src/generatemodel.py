@@ -19,6 +19,7 @@ for name in os.listdir(path):
 path = os.getcwd()
 
 #Generate the new model :D
+print("Generating model...")
 model = cv2.face.EigenFaceRecognizer_create()
 model.train(faces, np.array(labels))
 
