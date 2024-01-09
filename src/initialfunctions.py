@@ -1,6 +1,9 @@
 import os
 import time
 import shutil
+import usemodel
+import generatemodel
+import addfaces
 """This is suppose to be the 'preload file,
 and do stuff likem check if the data dir exists,
 add the needed functions to the program, etc.'"""
@@ -40,8 +43,9 @@ def add_faces():
     label = input("-> ")
     if label == "-1":
         return 0
-    os.system(f"python addfaces.py {label}")
-
+    
+    addfaces.addFace(label)
+    
     return 0
 
 def remove_faces():
@@ -76,7 +80,7 @@ def generate():
         time.sleep(3)
         return -1
 
-    os.system("python generatemodel.py")
+    generatemodel.generateModel()
     time.sleep(1)
 
     return 0
@@ -93,7 +97,7 @@ def use():
         time.sleep(3)
         return -1
 
-    os.system("python usemodel.py")
+    usemodel.useModel()
 
     return 0
 
