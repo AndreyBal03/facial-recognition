@@ -2,17 +2,17 @@ import cv2
 import os
 import pandas as pd
 
-path = os.getcwd()
+path = os.path.dirname(__file__)
 
 #All is going to be in a function to call it
 def useModel():
     print("Loading model...")
     model = cv2.face.EigenFaceRecognizer_create()
-    model.read("model.xml")
+    model.read(path + "/model.xml")
 
     video = cv2.VideoCapture(0)
     faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml') #cv2 model
-    labels = pd.read_csv("index.csv")
+    labels = pd.read_csv(path + "/index.csv")
 
 
     print("Press 'q' to exit ")

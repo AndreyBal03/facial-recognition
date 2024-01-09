@@ -8,7 +8,7 @@ import addfaces
 and do stuff likem check if the data dir exists,
 add the needed functions to the program, etc.'"""
 
-PATH = os.getcwd()
+PATH = os.path.dirname(__file__)
 def clear():
     if os.name == "nt":
         os.system("cls")
@@ -21,7 +21,7 @@ def make_defaults():
     if os.path.exists(PATH + "/data"):
         return 0
     else:
-        os.makedirs("data")
+        os.makedirs(PATH + "/data")
     return 0
 
 def read_faces():

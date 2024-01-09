@@ -6,7 +6,7 @@ import os
 #from another file, Everything is going to be inside a function
 
 def addFace(label):
-    path = os.getcwd() + f"/data/{label}"
+    path = os.path.dirname(__file__) + f"/data/{label}"
 
     if not os.path.exists(path):
         os.makedirs(path)
