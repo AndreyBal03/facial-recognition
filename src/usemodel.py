@@ -35,9 +35,10 @@ def useModel():
             final_l = labels[str(ans[0])][0]
             if ans[1] > 5000:
                 final_l = "Unknown"
-            cv2.putText(frame, f"{final_l}", (x-10,y-10), 1, 2, (255,255,255), 1, cv2.LINE_AA)
+            cv2.putText(frame, f"{final_l}", (x-10,y-10), 1, 2, (100,200,100), 1, cv2.LINE_AA)
+            cv2.rectangle(frame, (x,y), (x+width, y+height), (100,200,100), 3)
 
-        cv2.imshow("Si", frame)
+        cv2.imshow("Image", frame)
 
         if cv2.waitKey(1) == ord("q"):
             break
